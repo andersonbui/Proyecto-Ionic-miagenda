@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Profesores</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <button ion-item *ngFor="let item of profesores" (click)="verDetallesProfesor($event,item)" >
+      <!--<ion-icon name="{{item.icon}}" item-left></ion-icon>-->
+      {{item.nombre}}
+      <!--<div class="item-note" item-right> {{item.telefono}}</div>-->
+    </button>
+  </ion-list>
+  <div *ngIf="selectedItem" padding>
+    You navigated here from <b>{{selectedItem.title}}</b>
+  </div>
+
+    <ion-fab top right edge>
+      <button ion-fab color="vibrant" mini (click)="agregarProfesor()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-fab>
+
+</ion-content>

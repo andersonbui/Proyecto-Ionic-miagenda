@@ -1,0 +1,30 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title text-center>
+            Detalles
+        </ion-title>
+        <div class="una" end>
+            <ion-buttons>
+                <button ion-button (click)="openEditar()">
+                    <ion-icon name="create"></ion-icon>
+                </button>
+            </ion-buttons>
+        </div>
+    </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <ion-list>
+        <ion-item>
+            <h1>{{profesor.nombre}}</h1>
+        </ion-item>
+        <ion-item>
+            Telefono {{profesor.telefono}}
+        </ion-item>
+        <ion-item>
+            Oficina {{profesor.oficina}}
+        </ion-item>
+        <ion-item>
+            Email {{profesor.oficina}}
+        </ion-item>
+    </ion-list>
+</ion-content>

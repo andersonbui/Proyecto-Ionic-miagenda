@@ -1,0 +1,42 @@
+<ion-header>
+    <ion-navbar class="nav">
+        <ion-title>Buttons In Components</ion-title>
+        <ion-buttons start>
+            <button ion-button  icon-only (click)="cancelar()">
+                <ion-icon name='md-close'></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-buttons end>
+            <button ion-button icon-only (click)="aceptar()"> 
+                <ion-icon name='md-checkmark'></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding class="buttons-components-page">
+    <ion-list>
+        <ion-item>
+            <ion-label floating>Username</ion-label>
+            <ion-input [(ngModel)]="profesor.nombre" type="text" ></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Telefono</ion-label>
+            <ion-input  [(ngModel)]="profesor.telefono" type="text" ></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Email</ion-label>
+            <ion-input [(ngModel)]="profesor.email" type="text" ></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Oficina</ion-label>
+            <ion-input [(ngModel)]="profesor.oficina" type="text" ></ion-input>
+        </ion-item>
+    </ion-list>
+    <ion-toolbar>
+        <button ion-button full color="danger" (click)="showConfirm()">
+                Eliminar
+            </button>
+    </ion-toolbar>
+
+</ion-content>
