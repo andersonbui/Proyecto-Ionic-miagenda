@@ -17,9 +17,11 @@ export class ServicioAutenticacion {
 
   url: string = "http://"+IpServico.ip+"/usuarios/login";
   //url: string = "http://localhost:8080/usuarios/login";
+  public static idusuario:number;
 
   constructor(private http: Http) {
     console.log('Se inicio ServicioAutenticacion Provider');
+    ServicioAutenticacion.idusuario = 1;
   }
 
   login(usuario: string, password: string): Observable<any> {

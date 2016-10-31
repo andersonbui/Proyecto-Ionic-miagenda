@@ -20,7 +20,7 @@ export class ServicioProfesor {
 
   }
 
-  getAll(): Observable<Profesor[]> {
+  getAll(idusuario:number): Observable<Profesor[]> {
     let otraurl: string = this.url + "/select";
     var solicitud = { "nombretabla": "profesor" };
     //console.log(solicitud);

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, Platform, ToastController } from 'ionic-angular';
 import { Http } from "@angular/http";
 import { TableroPage } from "../tablero/tablero";
-
+//providers
 import { ServicioAutenticacion }  from "../../providers/servicio-autenticacion";
 
 /*
@@ -37,7 +37,7 @@ export class LoginPage {
       (data) => {
         console.log("user:"+data.user.user);
         //console.log("pass:"+data.user.pass);
-
+        ServicioAutenticacion.idusuario = data.user.idusuario;
         console.log('carambas');
 
         if (data.success) {

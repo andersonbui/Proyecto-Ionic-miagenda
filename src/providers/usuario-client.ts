@@ -15,7 +15,6 @@ export class UsuarioClient {
 
   //url:string = "http://10.0.2.2:8080/usuarios"; // para el emulador de android
   url: string = "http://" + IpServico.ip + "/general";
-
   constructor(private http: Http) {
     console.log('Hello UsuarioClient Provider');
   }
