@@ -3,7 +3,8 @@ import { Http, Response } from '@angular/http';
 import { Observable } from "rxjs/Observable";
 import { Profesor } from "./profesor";
 import { IpServico } from "./ip";
-
+//providers
+import { ServicioAutenticacion }  from "../providers/servicio-autenticacion";
 /*
   Generated class for the ProfesorClient provider.
 
@@ -20,9 +21,10 @@ export class ServicioProfesor {
 
   }
 
-  getAll(idusuario:number): Observable<Profesor[]> {
+  getAll(): Observable<Profesor[]> {
+    let idusuario = ServicioAutenticacion.idusuario;
     let otraurl: string = this.url + "/select";
-    var solicitud = { "nombretabla": "profesor" };
+    var solicitud = {"nombretabla":"profesor","nombreatributos":["idusuario"],"atributos":{	"idusuario": idusuario}};
     //console.log(solicitud);
     let obj = this.http.post(otraurl, solicitud).
       map(res => res.json() || {}).

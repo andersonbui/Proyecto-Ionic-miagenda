@@ -8,7 +8,6 @@ import { AgregarProfesorPage } from '../agregar-profesor/agregar-profesor';
 //providers
 import { ServicioProfesor }  from "../../providers/servicio-profesor";
 import { Profesor } from "../../providers/profesor";
-import { ServicioAutenticacion }  from "../../providers/servicio-autenticacion";
 
 @Component({
   templateUrl: 'profesores.html'
@@ -61,7 +60,7 @@ export class ProfesoresPage {
 
   leerTodosLosProfesores() {
 
-    this.servProfesor.getAll(ServicioAutenticacion.idusuario).subscribe((res) => {
+    this.servProfesor.getAll().subscribe((res) => {
       this.profesores = res;
       //console.log("entro leer profesores" + JSON.stringify(this.profesores) + "hola");
     });

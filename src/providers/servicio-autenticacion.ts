@@ -17,16 +17,16 @@ export class ServicioAutenticacion {
 
   url: string = "http://"+IpServico.ip+"/usuarios/login";
   //url: string = "http://localhost:8080/usuarios/login";
-  public static idusuario:number;
+  public static idusuario:number = 1;
 
   constructor(private http: Http) {
     console.log('Se inicio ServicioAutenticacion Provider');
-    ServicioAutenticacion.idusuario = 1;
   }
 
   login(usuario: string, password: string): Observable<any> {
-    return this.http.post(this.url,{user:usuario,pass:password})
-      .map(res => res.json()).catch(this.processCatch);     
+     let result =this.http.post(this.url,{user:usuario,pass:password})
+      .map(res => res.json()).catch(this.processCatch);
+      return result;
   }
   
   public static extractData(res: Response) {
