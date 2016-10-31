@@ -1,5 +1,5 @@
 import {Component} from "@angular/core";
-import {NavController, NavParams, AlertController, ViewController} from 'ionic-angular';
+import {NavController, NavParams, ViewController} from 'ionic-angular';
 //providers
 import { Profesor } from "../../providers/profesor";
 import { ServicioProfesor }  from "../../providers/servicio-profesor";
@@ -15,7 +15,6 @@ export class EditarProfesorPage {
     public constructor(
         private navController: NavController,
         private navParams: NavParams,
-        public alertCtrl: AlertController,
         public viewCtrl: ViewController,
         public servProfesor: ServicioProfesor
     ) {
@@ -27,28 +26,6 @@ export class EditarProfesorPage {
        
     }
 
-    showConfirm() {
-        let confirm = this.alertCtrl.create({
-            title: 'Eta seguro que desea eliminar?',
-            message: 'Do you agree to use this lightsaber ?',
-            buttons: [
-                {
-                    text: 'Cancelar',
-                    handler: () => {
-                        console.log('Disagree clicked');
-                    }
-                },
-                {
-                    text: 'Aceptar',
-                    handler: () => {
-                        console.log('Se edito un profesor');
-                        this.servProfesor.getAll().subscribe((res) => { });
-                    }
-                }
-            ]
-        });
-        confirm.present();
-    }
 
     aceptar() {
         let data = { 'foo': 'bar' };

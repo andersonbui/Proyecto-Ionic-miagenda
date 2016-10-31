@@ -13,7 +13,7 @@ import { IpServico } from "./ip";
 @Injectable()
 export class ServicioProfesor {
 
-  url: string = "http://"+IpServico.ip+"/general";
+  url: string = "http://" + IpServico.ip + "/general";
 
   constructor(private http: Http) {
     console.log('Hola servicio profesor Provider');
@@ -38,11 +38,21 @@ export class ServicioProfesor {
     //console.log(JSON.stringify(obj));
     return obj;
   }*/
-  
+
   insert(profesor: Profesor) {
     let urlcompleta: string = this.url + "/insert/profesor";
     return this.http.post(urlcompleta, profesor).map(res => res.json()).catch(this.processCatch);
 
+  }
+
+  delete(idprof: string) {
+    var solicitud = {"nombretabla":"profesor","nombreatributos":["idprofesor"],"atributos":{	"idprofesor": idprof}};
+    let otraurl: string = this.url + "/delete";
+    //console.log(solicitud);
+    let obj = this.http.post(otraurl, solicitud).
+      map(res => res.json() || {}).
+      catch(this.processCatch);
+    return obj;
   }
 
   login(profesor: string, password: string): Observable<any> {
