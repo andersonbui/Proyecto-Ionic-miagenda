@@ -24,7 +24,7 @@ export class MyApp {
 
   // make HelloIonicPage the root (or first) page
   //rootPage: any = LoginPage;
-  rootPage: any = ProfesoresPage;
+  rootPage: any = AsignaturasPage;
   pages: Array<{title: string, component: any}>;
 
   constructor(

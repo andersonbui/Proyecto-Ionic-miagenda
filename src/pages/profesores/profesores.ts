@@ -59,7 +59,6 @@ export class ProfesoresPage {
   }
 
   leerTodosLosProfesores() {
-
     this.servProfesor.getAll().subscribe((res) => {
       this.profesores = res;
       //console.log("entro leer profesores" + JSON.stringify(this.profesores) + "hola");

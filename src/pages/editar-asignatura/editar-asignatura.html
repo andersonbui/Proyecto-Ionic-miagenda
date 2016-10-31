@@ -1,0 +1,28 @@
+<ion-header>
+    <ion-navbar class="nav">
+        <ion-title>Editar asignatura</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding class="buttons-components-page">
+   
+    <form [formGroup]="myForm" (ngSubmit)="aceptar(myForm.value)">
+        <ion-item>
+            <ion-label floating>Nombre</ion-label>
+            <ion-input formControlName="nombre" type="text" name="nombre" minlength="5" maxlength="45"></ion-input>
+        </ion-item>
+        <p [hidden]="myForm.controls.nombre.valid" danger padding-left>El nombre es oblrequerido (min 5 caracteres, max 45)</p>
+        <ion-item>
+            <ion-label floating>Acronimo</ion-label>
+            <ion-input formControlName="acronimo" name="acronimo" type="tel"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Creditos</ion-label>
+            <ion-input formControlName="creditos" name="creditos" ></ion-input>
+        </ion-item>
+        <div style="display:flex">
+            <button style="flex: 1" ion-button type="submit" item-left [disabled]="!myForm.valid">Aceptar</button>
+            <a  style="flex: 1" ion-button  (click)="cancelar()" item-right>Cancelar</a>
+        </div>
+    </form>
+</ion-content>

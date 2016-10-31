@@ -1,6 +1,6 @@
 <ion-header>
     <ion-navbar class="nav">
-        <ion-title>Agregar profesor</ion-title>
+        <ion-title>Agregar asignatura</ion-title>
     </ion-navbar>
 </ion-header>
 
@@ -9,21 +9,17 @@
     <form [formGroup]="myForm" (ngSubmit)="agregar(myForm.value)">
         <ion-item>
             <ion-label floating>Nombre</ion-label>
-            <!--<ion-input formControlName="idprofesor" [hidden]="true"></ion-input>-->
+            <!--<ion-input formControlName="idasignatura" [hidden]="true"></ion-input>-->
             <ion-input formControlName="nombre" type="text" name="nombre" minlength="5" maxlength="20"></ion-input>
         </ion-item>
         <p [hidden]="myForm.controls.nombre.valid" danger padding-left>el nombre es oblrequerido (min 5 caracteres, max 20)</p>
         <ion-item>
-            <ion-label floating>Telefono</ion-label>
-            <ion-input formControlName="telefono" name="telefono" type="tel"></ion-input>
+            <ion-label floating>Acronimo</ion-label>
+            <ion-input formControlName="acronimo" name="acronimo" type="tel"></ion-input>
         </ion-item>
         <ion-item>
-            <ion-label floating>Email</ion-label>
-            <ion-input formControlName="email" name="email" type="email"></ion-input>
-        </ion-item>
-        <ion-item>
-            <ion-label floating>Oficina</ion-label>
-            <ion-input formControlName="oficina" name="oficina" type="text"></ion-input>
+            <ion-label floating>Creditos</ion-label>
+            <ion-input formControlName="creditos" name="creditos" type="number"></ion-input>
         </ion-item>
         <div style="display:flex">
             <button style="flex: 1" ion-button type="submit" item-left [disabled]="!myForm.valid">Agregar</button>

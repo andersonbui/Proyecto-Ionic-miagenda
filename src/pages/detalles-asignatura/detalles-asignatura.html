@@ -1,18 +1,41 @@
 <ion-header>
-  <ion-navbar>
-    <button menuToggle *ngIf="!selectedItem">
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>detalles asignatura</ion-title>
-  </ion-navbar>
-</ion-header>
+    <ion-navbar>
+        <ion-title text-center>
+            Detalles
+        </ion-title>
+        <ion-buttons item-right end>
+            <button ion-button item-right color="primary" (click)="openEditar()">
+                    <ion-icon style="font-size: 40px;" name="create"></ion-icon>
+                </button>
+        </ion-buttons>
+    </ion-navbar>
 
-<ion-content>
- <div *ngIf="selectedItem" class="selection">
-    <b>{{selectedItem.title}}</b>
-    <ion-icon name="{{selectedItem.icon}}"></ion-icon>
-    <div>
-      You navigated here from <b>{{selectedItem.title}}</b>
-    </div>
-  </div>
+</ion-header>
+<ion-content padding>
+    <ion-list>
+        <ion-item>
+            <h1>{{asignatura.nombre}}</h1>
+        </ion-item>
+        <ion-item>
+            <ion-label irem-left color="primary">Acronimo</ion-label>
+            <ion-label  irem-right >{{asignatura.acronimo}}</ion-label>
+
+        </ion-item>
+        <ion-item>
+            <ion-label  irem-left color="primary">Creditos</ion-label>
+            <ion-label irem-right > {{asignatura.creditos}} </ion-label>
+
+        </ion-item>
+    </ion-list>
+
 </ion-content>
+<ion-footer >
+
+    <ion-toolbar no-border color="danger"  (click)="eliminar(asignatura.idasignatura)">
+        <ion-buttons cenrer full style="width:100%">
+                <ion-title text-center>Eliminar</ion-title>
+        </ion-buttons>
+    </ion-toolbar>
+
+
+</ion-footer>

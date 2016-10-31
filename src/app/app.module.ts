@@ -11,7 +11,9 @@ import { AgregarProfesorPage } from '../pages/agregar-profesor/agregar-profesor'
 import { DetallesProfesorPage } from '../pages/detalles-profesor/detalles-profesor';
 import { EditarProfesorPage } from '../pages/editar-profesor/editar-profesor';
 import { AsignaturasPage } from '../pages/asignaturas/asignaturas';
+import { AgregarAsignaturaPage } from '../pages/agregar-asignatura/agregar-asignatura';
 import { DetallesAsignaturaPage } from '../pages/detalles-asignatura/detalles-asignatura';
+import { EditarAsignaturaPage } from '../pages/editar-asignatura/editar-asignatura';
 import { ConfiguracionesPage } from '../pages/configuraciones/configuraciones';
 import { TableroPage } from '../pages/tablero/tablero';
 import { LoginPage } from '../pages/login/login';
@@ -19,6 +21,7 @@ import { LoginPage } from '../pages/login/login';
 //providers
 import { ServicioAutenticacion }  from "../providers/servicio-autenticacion";
 import { ServicioProfesor }  from "../providers/servicio-profesor";
+import { ServicioAsignatura }  from "../providers/servicio-asignatura";
 
 import { Database } from '../providers/database';
 
@@ -34,7 +37,9 @@ import { Database } from '../providers/database';
     DetallesProfesorPage,
     EditarProfesorPage,
     AsignaturasPage,
+    AgregarAsignaturaPage,
     DetallesAsignaturaPage,
+    EditarAsignaturaPage,
     ConfiguracionesPage,
     TableroPage,
     LoginPage
@@ -55,7 +60,9 @@ import { Database } from '../providers/database';
     DetallesProfesorPage,
     EditarProfesorPage,
     AsignaturasPage,
+    AgregarAsignaturaPage,
     DetallesAsignaturaPage,
+    EditarAsignaturaPage,
     ConfiguracionesPage,
     TableroPage,
     LoginPage
@@ -63,7 +70,8 @@ import { Database } from '../providers/database';
   providers: [
     Database,
     ServicioAutenticacion,
-    ServicioProfesor
+    ServicioProfesor,
+    ServicioAsignatura
   ]
 })
 export class AppModule { }
