@@ -12,7 +12,7 @@
             <!--<ion-input formControlName="idprofesor" [hidden]="true"></ion-input>-->
             <ion-input formControlName="nombre" type="text" name="nombre" minlength="5" maxlength="20"></ion-input>
         </ion-item>
-        <p [hidden]="myForm.controls.nombre.valid" danger padding-left>nombre es obligatorio</p>
+        <p [hidden]="myForm.controls.nombre.valid" danger padding-left>el nombre es oblrequerido (min 5 caracteres, max 20)</p>
         <ion-item>
             <ion-label floating>Telefono</ion-label>
             <ion-input formControlName="telefono" name="telefono" type="tel"></ion-input>

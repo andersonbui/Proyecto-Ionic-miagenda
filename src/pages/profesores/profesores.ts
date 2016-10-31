@@ -73,8 +73,8 @@ export class ProfesoresPage {
 
   doRefresh(refresher) {
     console.log('Begin async operation', refresher);
-
     setTimeout(() => {
+      this.leerTodosLosProfesores();
       console.log('Async operation has ended');
       refresher.complete();
     }, 2000);

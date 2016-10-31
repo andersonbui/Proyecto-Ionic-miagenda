@@ -46,18 +46,26 @@ export class ServicioProfesor {
   }
 
   delete(idprof: string) {
-    var solicitud = {"nombretabla":"profesor","nombreatributos":["idprofesor"],"atributos":{	"idprofesor": idprof}};
+    var cuerpo = {"nombretabla":"profesor","nombreatributos":["idprofesor"],"atributos":{	"idprofesor": idprof}};
     let otraurl: string = this.url + "/delete";
-    //console.log(solicitud);
-    let obj = this.http.post(otraurl, solicitud).
+    let obj = this.http.post(otraurl, cuerpo).
       map(res => res.json() || {}).
       catch(this.processCatch);
     return obj;
   }
 
-  login(profesor: string, password: string): Observable<any> {
-    return this.http.post(this.url, { user: profesor, pass: password })
-      .map(res => res.json()).catch(this.processCatch);
+  update(idprof:string, profesor:Profesor){
+    var cuerpo = {
+	    "nombretabla":"profesor",
+  	  "nombreatributos":["idprofesor"],
+	    "atributos":{"idprofesor": idprof},
+	    "actualizacion":profesor
+    }
+    let otraurl: string = this.url + "/update";
+    let obj = this.http.post(otraurl, cuerpo).
+      map(res => res.json() || {}).
+      catch(this.processCatch);
+    return obj;
   }
 
   public processCatch() {

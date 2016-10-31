@@ -3,14 +3,13 @@
         <ion-title text-center>
             Detalles
         </ion-title>
-        <div class="una" end>
-            <ion-buttons>
-                <button ion-button (click)="openEditar()">
-                    <ion-icon name="create"></ion-icon>
+        <ion-buttons item-right end>
+            <button ion-button item-right color="primary" (click)="openEditar()">
+                    <ion-icon style="font-size: 40px;" name="create"></ion-icon>
                 </button>
-            </ion-buttons>
-        </div>
+        </ion-buttons>
     </ion-navbar>
+
 </ion-header>
 <ion-content padding>
     <ion-list>
@@ -18,19 +17,30 @@
             <h1>{{profesor.nombre}}</h1>
         </ion-item>
         <ion-item>
-            Telefono {{profesor.telefono}}
+            <ion-label stacked color="primary">Telefono</ion-label>
+            <ion-label>{{profesor.telefono}}</ion-label>
+
         </ion-item>
         <ion-item>
-            Oficina {{profesor.oficina}}
+            <ion-label stacked color="primary">Oficina</ion-label>
+            <ion-label>{{profesor.oficina}}</ion-label>
+
         </ion-item>
         <ion-item>
-            Email {{profesor.oficina}}
+            <ion-label stacked color="primary">Email</ion-label>
+            <ion-label> {{profesor.email}} </ion-label>
+
         </ion-item>
     </ion-list>
 
-    <ion-toolbar>
-        <button ion-button full color="danger" (click)="eliminar(profesor.idprofesor)">
-                Eliminar
-            </button>
-    </ion-toolbar>
 </ion-content>
+<ion-footer >
+
+    <ion-toolbar no-border color="danger"  (click)="eliminar(profesor.idprofesor)">
+        <ion-buttons cenrer full style="width:100%">
+                <ion-title text-center>Eliminar</ion-title>
+        </ion-buttons>
+    </ion-toolbar>
+
+
+</ion-footer>

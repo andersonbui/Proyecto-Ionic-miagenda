@@ -1,36 +1,32 @@
 <ion-header>
     <ion-navbar class="nav">
-        <ion-title>Buttons In Components</ion-title>
-        <ion-buttons start>
-            <button ion-button  icon-only (click)="cancelar()">
-                <ion-icon name='md-close'></ion-icon>
-            </button>
-        </ion-buttons>
-        <ion-buttons end>
-            <button ion-button icon-only (click)="aceptar()"> 
-                <ion-icon name='md-checkmark'></ion-icon>
-            </button>
-        </ion-buttons>
+        <ion-title>Editar profesor</ion-title>
     </ion-navbar>
 </ion-header>
 
 <ion-content padding class="buttons-components-page">
-    <ion-list>
+   
+    <form [formGroup]="myForm" (ngSubmit)="aceptar(myForm.value)">
         <ion-item>
-            <ion-label floating>Username</ion-label>
-            <ion-input [(ngModel)]="profesor.nombre" type="text" ></ion-input>
+            <ion-label floating>Nombre</ion-label>
+            <ion-input formControlName="nombre" type="text" name="nombre" minlength="5" maxlength="20"></ion-input>
         </ion-item>
+        <p [hidden]="myForm.controls.nombre.valid" danger padding-left>El nombre es oblrequerido (min 5 caracteres, max 20)</p>
         <ion-item>
             <ion-label floating>Telefono</ion-label>
-            <ion-input  [(ngModel)]="profesor.telefono" type="text" ></ion-input>
+            <ion-input formControlName="telefono" name="telefono" type="tel"></ion-input>
         </ion-item>
         <ion-item>
             <ion-label floating>Email</ion-label>
-            <ion-input [(ngModel)]="profesor.email" type="text" ></ion-input>
+            <ion-input formControlName="email" name="email" type="email"></ion-input>
         </ion-item>
         <ion-item>
             <ion-label floating>Oficina</ion-label>
-            <ion-input [(ngModel)]="profesor.oficina" type="text" ></ion-input>
+            <ion-input formControlName="oficina" name="oficina" type="text"></ion-input>
         </ion-item>
-    </ion-list>
+        <div style="display:flex">
+            <button style="flex: 1" ion-button type="submit" item-left [disabled]="!myForm.valid">Aceptar</button>
+            <a  style="flex: 1" ion-button  (click)="cancelar()" item-right>Cancelar</a>
+        </div>
+    </form>
 </ion-content>
